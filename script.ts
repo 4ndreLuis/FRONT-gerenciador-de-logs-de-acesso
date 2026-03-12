@@ -38,9 +38,8 @@ const redenrizarLogs = () => {
       const agora = new Date();
       const horaFormatada = agora.toLocaleTimeString();
       const template = `
-      <li class=log-item>
-      <span><strong>Acesso: </strong>${nome}</span></li>
-      <span class=log-time>${horaFormatada}</span></li>`;
+       <span class=log-time>${horaFormatada}</span></li>
+      <li class=log-item><span><strong>Acesso: </strong>${nome}</span></li>`;
       logList.insertAdjacentHTML("beforeend", template);
     });
 };

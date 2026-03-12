@@ -28,7 +28,7 @@ var redenrizarLogs = function () {
         .forEach(function (nome) {
         var agora = new Date();
         var horaFormatada = agora.toLocaleTimeString();
-        var template = "\n      <li class=log-item>\n      <span><strong>Acesso: </strong>".concat(nome, "</span></li>\n      <span class=log-time>").concat(horaFormatada, "</span></li>");
+        var template = "\n       <span class=log-time>".concat(horaFormatada, "</span></li>\n      <li class=log-item><span><strong>Acesso: </strong>").concat(nome, "</span></li>");
         logList.insertAdjacentHTML("beforeend", template);
     });
 };
