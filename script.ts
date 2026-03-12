@@ -29,4 +29,19 @@ const adicionarAcesso = () => {
   inputUser.focus();
 };
 
+const redenrizarLogs = () => {
+  logList.innerHTML = "";
+  logs
+    .slice()
+    .reverse()
+    .forEach((nome) => {
+      const agora = new Date();
+      const horaFormatada = agora.toLocaleTimeString();
+      const template = `
+      <li class=log-item>
+      <span><strong>Acesso: </strong>${nome}</span></li>
+      <span class=log-time>${horaFormatada}</span></li>`;
+      logList.insertAdjacentHTML("beforeend", template);
+    });
+};
 btnGrant.addEventListener("click", adicionarAcesso);

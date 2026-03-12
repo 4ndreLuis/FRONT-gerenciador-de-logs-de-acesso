@@ -13,5 +13,23 @@ var adicionarAcesso = function () {
         alert("Por favor, inisira um ID ou Nome válido.");
         return;
     }
+    logs.push(usuario);
+    contador = logs.length;
+    atualizarEstatisticas();
+    redenrizarLogs();
+    inputUser.value = "";
+    inputUser.focus();
+};
+var redenrizarLogs = function () {
+    logList.innerHTML = "";
+    logs
+        .slice()
+        .reverse()
+        .forEach(function (nome) {
+        var agora = new Date();
+        var horaFormatada = agora.toLocaleTimeString();
+        var template = "\n      <li class=log-item>\n      <span><strong>Acesso: </strong>".concat(nome, "</span></li>\n      <span class=log-time>").concat(horaFormatada, "</span></li>");
+        logList.insertAdjacentHTML("beforeend", template);
+    });
 };
 btnGrant.addEventListener("click", adicionarAcesso);
