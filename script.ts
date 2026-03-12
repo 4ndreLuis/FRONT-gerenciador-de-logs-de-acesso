@@ -12,3 +12,21 @@ let contador: number = 0;
 const atualizarEstatisticas = () => {
   totalCount.textContent = contador.toString();
 };
+
+const adicionarAcesso = () => {
+  const usuario = inputUser.value.trim();
+  if (!usuario) {
+    alert("Por favor, inisira um ID ou Nome válido.");
+    return;
+  }
+  logs.push(usuario);
+  contador = logs.length;
+
+  atualizarEstatisticas();
+  redenrizarLogs();
+
+  inputUser.value = "";
+  inputUser.focus();
+};
+
+btnGrant.addEventListener("click", adicionarAcesso);
