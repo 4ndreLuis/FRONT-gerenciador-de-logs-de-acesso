@@ -111,3 +111,52 @@ button:active {
 .status-online {
   color: #00ff88 !important;
 }
+.log-section {
+  margin-top: 20px;
+}
+
+.log-section h2 {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#logList {
+  list-style: none;
+  max-height: 250px;
+  overflow-y: auto; /* Cria scroll se a lista crescer muito */
+  padding-right: 5px;
+}
+
+/* Estilo para cada item que o TS vai criar depois */
+.log-item {
+  background: #16161a;
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border-left: 4px solid #00ff88;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease-in; /* Efeito de entrada */
+}
+
+.log-time {
+  color: #555;
+  font-size: 0.8rem;
+}
+
+/* Animação suave para novos logs */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
